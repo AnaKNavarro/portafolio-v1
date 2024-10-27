@@ -1,0 +1,15 @@
+/* ImageBlock.css */
+
+.image-block {
+    width: 100%; /* Asegura que el bloque use todo el ancho */
+    overflow: hidden; /* Para evitar que la imagen sobresalga */
+    display: flex; /* Flex para centrar la imagen */
+    justify-content: center; /* Centra horizontalmente */
+    margin-top: 20px; /* Espacio arriba del bloque */
+}
+
+.responsive-image {
+    width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-height: 400px; /* Ajusta la altura máxima, cámbiala según lo que desees */
+}
