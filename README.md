@@ -229,3 +229,13 @@ _Nota: Al principio usabaswitch en lugar de Routes, me marcaba error, por eso se
 ```
 npm start
 ```
+
+## Updating your deployed
+```
+git add
+git commit -m "..."
+git push origin main
+npm run build
+npm run deploy
+```
+... a esperar que se actualize en GitHub Pages
