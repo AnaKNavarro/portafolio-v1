@@ -31,19 +31,24 @@ body {
 }
 
 .hero-nav img {
-    height: 100px; /* Ajuste de altura del logo */
+    height: 7rem; /* Ajuste de altura del logo */
     margin-right: auto; /* Espacio a la derecha del logo */
 }
 
 .hero-nav ul {
     list-style: none;
-    display: flex; /* Para alinear los enlaces de manera horizontal */
+    display: none; /* Para alinear los enlaces de manera horizontal */
     padding: 0;
     margin: 0;
+    display: none;
 }
 
 .hero-nav ul li {
     margin: 0 15px; 
+}
+
+.hero-nav ul.show {
+    display: flex; /* Mostrar el menú cuando esté activo */
 }
 
 .hero-nav a {
@@ -74,4 +79,73 @@ body {
     align-self: flex-start; /* Alinea el contenido hacia el principio del contenedor */
     text-align: left; /* Alinear el texto a la izquierda */
     margin-left: 20px; /* Espaciado desde el borde izquierdo */
+    margin-top: 10px;
+}
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* Asegúrate de que la dirección del flex sea columna para apilar los elementos */
+        height: auto; /* Permitir que el contenido determine la altura */
+    }
+
+    .hero-nav {
+        position: relative; /* Permanece fijado en la parte superior pero deja espacio para el contenido */
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .hero-nav img {
+        height: 6rem; /* Reducir el tamaño del logo */
+        margin-right: 0; /* Ajustar el margen si es necesario */
+    }
+
+    .hero-nav ul {
+        flex-direction: column; /* Cambiar a dirección vertical en móviles */
+        align-items: flex-start; /* Alinear a la izquierda */
+        width: 100%; /* Anchura máxima */
+        margin-top: 10px; /* Separación respecto al logo */
+        display: none; /* Mantener oculto por defecto */
+    }
+
+    .hero-nav ul li {
+        margin: 5px 0; /* Margen vertical entre enlaces */
+    }
+
+    .hero-nav.show-menu ul {
+        display: flex; /* Mostrar el menú cuando se active */
+    }
+
+    .hero-nav a {
+        padding: 10px 20px; /* Espaciado para clics táctiles */
+    }
+
+    .hero-title {
+        font-size: 2rem; /* Ajustar el tamaño del título */
+    }
+
+    .hero-description {
+        font-size: 1rem; /* Ajustar el tamaño de la descripción */
+    }
+
+    .hero-content {
+        margin-top: 20px; /* Añadir margen superior para separarlo del navbar */
+        margin-left: 0; /* Remover el espaciado izquierdo adicional para centrarlo */
+        text-align: center; /* Opcional: Centrar el texto para una mejor presentación en móvil */
+    }
+    /* Puedes agregar un botón hamburguesa o icono para activar el menú */
+
+    .menu-toggle {
+        display: block; /* Asegúrate de mostrarlo solo en móviles */
+        cursor: pointer;
+    }
+
+    @media (min-width: 769px) {
+        .hero-nav ul {
+            display: flex; /* Mostrar las opciones de navegación directamente */
+        }
+
+        .menu-toggle {
+            display: none; /* Ocultar el botón del menú en computadoras */
+        }
+    }
 }

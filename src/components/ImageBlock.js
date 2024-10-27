@@ -1,6 +1,6 @@
 import React from 'react';
 import './ImageBlock.css'; // Asegúrate de crear un archivo CSS para los estilos
-import myImage_1 from '../images/imagen_1.png';
+import myImage_1 from '../images/imagen_1.jpg';
 
 function ImageBlock() {
     return (

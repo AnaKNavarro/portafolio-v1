@@ -5,7 +5,7 @@
     overflow: hidden; /* Para evitar que la imagen sobresalga */
     display: flex; /* Flex para centrar la imagen */
     justify-content: center; /* Centra horizontalmente */
-    margin-top: 20px; /* Espacio arriba del bloque */
+    margin-top: 5px; /* Espacio arriba del bloque */
 }
 
 .responsive-image {
