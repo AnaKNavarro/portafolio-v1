@@ -1,74 +1,231 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
 # Direccion
 https://anaknavarro.github.io/portafolio-v1
+
+## Desplegar aplicación react en Github pages
+### 1. Crear un proyecto de react desde la consola
+Nota: 
+* Posicionado desde la carpeta donde quieres que se guarde tu proyecto
+* Antes instalar node.js (asegurandote de marcar la opción para agregar Node.js en el PATH)
+* Verificar la versión de node y de npm
+
+En la consola escribir:
+```
+npx create-react-app mi-portafolio-react
+```
+
+_Nota personal_
+
+_A mi me marcaba este error: npm error enoent ENOENT: no such file or directory, lstat 'C:\\...\AppData\Roaming\npm', la solución fue buscar esa dirección, que eran carpetas ocultas y dentro de Roaming, crear la carpeta npm cpn mkdir_
+
+### 2. Iniciar el servidor de desarrollo
+Al crearse el proyecto ya se puede abrir la aplicación en http://localhost:3000
+
+### 3. Crear un repo en github
+
+* Ve a GitHub
+* Haz click en el botón de "+"
+* Selecciona "New repository"
+* Guarda la dirección de git
+
+### 4. Instala dependencias
+En tu proyecto local, ejecuta en la consola:
+```
+npm install gh-pages --save-dev
+
+```
+
+Y modifica tu archivo package.json, agregando esta linea despues del nombre de tu proyecto:
+
+```
+"homepage": "https://<tu-nombre-de-usuario>.github.io/<nombre-del-repositorio>",
+```
+
+Ejemplo:
+
+```
+"name": "portafolio-react",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://AnaKNavarro.github.io/portafolio-v1",
+  ...
+```
+
+Y dentro de la sección de scripts, agregar lo siguiente:
+```
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build"
+```
+
+Ejecuta el siguiente comando para crear la versión optimizada:
+```
+npm run build
+```
+
+_Este último comando creara una nueva carpeta llama 'build' que contiene los archivos necesarios para la aplicación_
+
+### 5. Enviar el repositorio a master
+1. Asegurate de que el proyecto este inicializado como repositroio de Git, sino inicializarlo con
+
+```
+git init
+```
+
+2. guarda los cambios 
+
+```
+git add .
+git commit -m "..."
+```
+3. Configura el repositorio remoto (con la dirección del paso 3. Crear un repositorio en git)
+
+```
+git remote add origin <direccion del repo en git>
+```
+
+4. Sube tu branch al repositorio remoto
+```
+git push -u origin master
+```
+
+### 6. Configurar github pages
+* ve a GitHub y en el repositorio da click en "Settings"
+* Busca la opción de page o GitHub Pages
+* Busca la opción donde puedas modificar la rama (que siga None o master) y selecciona gh-pages
+* Guarda la configuración
+
+### 7. Despliega tu aplicación
+
+* Desde tu local ejecuta:
+```
+npm run deploy
+```
+
+Listo! Despues de esto podras ingresar a la dirección del paso 4. Instala dependencias, que es algo como esto: 
+
+"https://AnaKNavarro.github.io/portafolio-v1"
+
+### Actualizar cuando hagas cambios en local:
+```
+git add .
+git commit -m "..."
+npm run deploy
+```
+
+## Dirigir a otra página dentro de la aplicación react
+
+* Instalar react router:
+```
+npm install react-router-dom
+```
+
+* Modificar el archivo App.js
+
+_En este ejemplo, pasamos de esto:_
+
+```
+import React from 'react';
+import Header from './components/Header';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import './index.css'; // Puedes usar este archivo para agregar estilos generales
+
+function App() {
+  return (
+    <div>
+      <Header />
+      <About />
+      <Projects />
+      <Contact />
+    </div>
+  );
+}
+
+export default App;
+```
+
+_A esto:_
+```
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Header from './components/Header';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import './index.css'; // Asegúrate de agregar tus estilos
+
+function App() {
+  return (
+    <Router>
+      <Header />
+      <Switch>
+        <Route path="/" exact component={Projects} />
+        <Route path="/about" component={About} />
+        <Route path="/projects" component={Projects} />
+        <Route path="/contact" component={Contact} />
+      </Switch>
+    </Router>
+  );
+}
+
+export default App;
+```
+
+* Modificar tambien el Header
+
+_Pasando de esto:_
+```
+import React from 'react';
+
+function Header() {
+    return (
+        <header>
+            <h1>Hola, soy [Tu Nombre]</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">Acerca de</a></li>
+                    <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+    );
+}
+
+export default Header;
+
+```
+_A esto:_
+```
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import './index.css'; // Asegúrate de tener tus estilos aquí
+
+function App() {
+  return (
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Projects />} /> {/* Página de inicio mostrando proyectos */}
+        <Route path="/about" element={<About />} /> {/* Página de Acerca de */}
+        <Route path="/projects" element={<Projects />} /> {/* Página de Proyectos */}
+        <Route path="/contact" element={<Contact />} /> {/* Página de Contacto */}
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+```
+
+_Nota: Al principio usabaswitch en lugar de Routes, me marcaba error, por eso se cambio a Routes, pero todo depende la versión_
+
+## Para probar antes de desplegar
+```
+npm start
+```

@@ -1,0 +1,77 @@
+/* Home.css */
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff; /* Color de fondo */
+    color: #000; /* Color del texto negro */
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh; /* Ocupa toda la altura de la ventana */
+    padding: 0 20px; 
+    position: relative; 
+}
+
+.hero-nav {
+    position: fixed; /* Cambia a fixed para mantener la barra en la parte superior */
+    top: 0;
+    left: 0; 
+    right: 0;
+    z-index: 1000; /* Asegúranos que la barra esté sobre otros elementos */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blando para el navbar */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Suaves transiciones */
+    padding: 10px 20px; /* Espaciado interior */
+    display: flex;
+    align-items: center; /* Alinear elementos verticalmente */
+    justify-content: space-between; /* Espacio entre el logo y los enlaces */
+}
+
+.hero-nav img {
+    height: 100px; /* Ajuste de altura del logo */
+    margin-right: auto; /* Espacio a la derecha del logo */
+}
+
+.hero-nav ul {
+    list-style: none;
+    display: flex; /* Para alinear los enlaces de manera horizontal */
+    padding: 0;
+    margin: 0;
+}
+
+.hero-nav ul li {
+    margin: 0 15px; 
+}
+
+.hero-nav a {
+    text-decoration: none;
+    color: #000; /* Color de los enlaces */
+    padding: 10px 15px; /* Espaciado interior para los enlaces */
+    border-radius: 5px; /* Bordes redondeados para los enlaces */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+.hero-nav a:hover {
+    background-color: #eee; /* Color de fondo al pasar el mouse */
+    color: #166d94; /* Color del texto al pasar el mouse */
+}
+
+.hero-title {
+    font-size: 2.5rem; /* Tamaño del texto del nombre */
+    margin: 0 0 20px 0; /* Margen inferior  */
+    color: #166d94; /* Color para "Hola, soy Ana" */
+}
+
+.hero-description {
+    font-size: 1.5rem; /* Tamaño del texto de la descripción */
+    margin: 5px 0; /* Margen superior e inferior más pequeño para reducir el espacio entre renglones */
+}
+
+.hero-content {
+    align-self: flex-start; /* Alinea el contenido hacia el principio del contenedor */
+    text-align: left; /* Alinear el texto a la izquierda */
+    margin-left: 20px; /* Espaciado desde el borde izquierdo */
+}
