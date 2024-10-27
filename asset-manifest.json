@@ -1,17 +1,22 @@
 {
   "files": {
-    "main.css": "/portafolio-v1/static/css/main.f3f9b471.css",
-    "main.js": "/portafolio-v1/static/js/main.98a31461.js",
+    "main.css": "/portafolio-v1/static/css/main.713b7c69.css",
+    "main.js": "/portafolio-v1/static/js/main.2de59691.js",
     "static/js/453.2e665e05.chunk.js": "/portafolio-v1/static/js/453.2e665e05.chunk.js",
-    "static/media/imagen_1.png": "/portafolio-v1/static/media/imagen_1.7d44a7f4dbeaa0a4e0f0.png",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/portafolio-v1/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
     "static/media/Logo_AN_pg.png": "/portafolio-v1/static/media/Logo_AN_pg.1e4a87c0100c987eeee1.png",
+    "static/media/imagen_1.jpg": "/portafolio-v1/static/media/imagen_1.c252f42ff8cf9db8901f.jpg",
+    "static/media/fontawesome-webfont.eot": "/portafolio-v1/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/portafolio-v1/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/portafolio-v1/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/portafolio-v1/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
     "index.html": "/portafolio-v1/index.html",
-    "main.f3f9b471.css.map": "/portafolio-v1/static/css/main.f3f9b471.css.map",
-    "main.98a31461.js.map": "/portafolio-v1/static/js/main.98a31461.js.map",
+    "main.713b7c69.css.map": "/portafolio-v1/static/css/main.713b7c69.css.map",
+    "main.2de59691.js.map": "/portafolio-v1/static/js/main.2de59691.js.map",
     "453.2e665e05.chunk.js.map": "/portafolio-v1/static/js/453.2e665e05.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f3f9b471.css",
-    "static/js/main.98a31461.js"
+    "static/css/main.713b7c69.css",
+    "static/js/main.2de59691.js"
   ]
 }
